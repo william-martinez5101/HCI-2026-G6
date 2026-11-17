@@ -105,7 +105,15 @@ Se seleccionaron y aplicaron dos métodos complementarios (analítico + empíric
 
 | Herramienta | Uso |
 |---|---|
-| [Por completar] | [Por completar] |
+| Figma Make / prototipo CaféU | Interfaz móvil evaluada en las tareas T1–T7 y en las inspecciones heurísticas. |
+| Navegador web (vista móvil 390 × 844 px) | Ejecutar las sesiones, inspeccionar la interfaz y reiniciar con F5 entre participantes. |
+| Cronómetro | Medir el tiempo real de ejecución de cada tarea. |
+| Hojas de observación en Markdown | Registrar éxito, ayudas, errores y observaciones anónimas P1–P3. |
+| Cuestionario SUS | Recopilar percepción de usabilidad mediante diez ítems (1 a 5) y calcular puntaje 0–100. |
+| Git y GitHub | Versionar evidencias, revisar aportaciones y gestionar ramas, Pull Requests y backlog de mejoras. |
+| YouTube | Recurso audiovisual externo para demostrar la técnica Think-Aloud. |
+| Wayground (antes Quizizz) | Importar y aplicar el cuestionario de diez preguntas desde `docs/quiz-wayground-APE6.xlsx`. |
+
 
 ## 8. Resultados
 
