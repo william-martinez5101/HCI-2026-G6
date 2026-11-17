@@ -47,32 +47,39 @@ Aplicar, triangular y cerrar la evaluación de usabilidad del prototipo **CaféU
 
 ## 4. Conceptos HCI utilizados
 
-[Por completar: identificar los conceptos y explicar su aplicación
-en la evaluación de la interfaz.]
+El desarrollo teórico completo se encuentra en [`docs/investigacion.md`](docs/investigacion.md).
 
 | Concepto | Aplicación en el proyecto |
 |---|---|
-| [Por completar] | [Por completar] |
+| **Usabilidad (ISO 9241-11:2018)** | Marco de evaluación basado en eficacia, eficiencia y satisfacción para estudiantes universitarios usando CaféU en móvil. |
+| **Verificación vs. Validación (Boehm, 1984)** | Sustenta la pregunta inicial: comprobar que el prototipo funciona técnicamente (verificación) no garantiza que el usuario perciba el feedback y logre sus metas (validación). |
+| **Evaluación formativa** | Orientada a descubrir problemas reales y priorizar mejoras accionables en lugar de certificar estadísticamente. |
+| **Métodos analíticos vs. empíricos** | Combinación de inspección experta (5 evaluadores heurísticos) con observación de usuarios reales (*Think-Aloud*). |
+| **Heurísticas de Nielsen (1994)** | 10 principios aplicados de forma independiente por 5 evaluadores para ampliar la cobertura de la interfaz. |
+| **Escala de severidad (Nielsen, 1995)** | Calificación numérica `1–4` (Cosmético, Menor, Mayor, Crítico) basada en **Frecuencia, Impacto y Persistencia**. |
+| **Métricas y SUS (Brooke, 1996)** | Tasa de éxito, mediana de tiempo, errores críticos/no críticos y puntaje SUS (rango 0–100, referencia 68, no es porcentaje). |
+| **Triangulación** | Contraste sistemático entre hallazgos heurísticos y evidencia de usuarios para fundamentar el backlog de mejoras. |
 
 ## 5. Métodos de evaluación seleccionados
 
-Seleccionar y aplicar al menos dos métodos pertinentes.
+Se seleccionaron y aplicaron dos métodos complementarios (analítico + empírico):
 
-### Método 1
+### Método 1: Evaluación Heurística de Nielsen (5 evaluadores)
 
-- Nombre: [Por completar].
-- Objetivo: [Por completar].
-- Justificación de su selección: [Por completar].
-- Procedimiento de aplicación: [Por completar].
-- Instrumentos utilizados: [Por completar].
+- **Nombre:** Evaluación Heurística con calificación de severidad (`1–4`).
+- **Objetivo:** Inspeccionar de forma independiente toda la interfaz de CaféU para detectar violaciones a las 10 heurísticas de Nielsen y estimar su severidad.
+- **Justificación de su selección:** Según Nielsen (1993), cinco evaluadores independientes detectan aproximadamente el 75 % de los problemas de usabilidad, cubriendo pantallas y funciones que las tareas de usuario podrían no recorrer.
+- **Procedimiento de aplicación:** Cada uno de los 5 integrantes (`E1–E5`) inspeccionó el prototipo por separado, registró sus hallazgos y asignó severidad (`1–4`) considerando frecuencia, impacto y persistencia.
+- **Instrumentos utilizados:** [`evidencias/06-guia-evaluacion-heuristica.md`](evidencias/06-guia-evaluacion-heuristica.md) y registros individuales `resultados/heuristica-*.md`.
 
-### Método 2
+### Método 2: Prueba de Usabilidad con Usuarios (*Think-Aloud*)
 
-- Nombre: [Por completar].
-- Objetivo: [Por completar].
-- Justificación de su selección: [Por completar].
-- Procedimiento de aplicación: [Por completar].
-- Instrumentos utilizados: [Por completar].
+- **Nombre:** Prueba de usabilidad moderada con protocolo de pensamiento en voz alta.
+- **Objetivo:** Medir eficacia, eficiencia y satisfacción real de estudiantes universitarios nuevos ejecutando tareas críticas (`T1–T7`).
+- **Justificación de su selección:** Aporta evidencia empírica directa del comportamiento real y permite validar si los problemas previstos por la heurística afectan a los usuarios (incluyendo el buscador y el control de borrado en `T7`).
+- **Procedimiento de aplicación:** Sesiones individuales con consentimiento verbal anonimizado, cuatro roles definidos (Moderador, Usuario, Cronometrista y Observador), reinicio `F5` entre participantes y cuestionario SUS al cierre.
+- **Instrumentos utilizados:** [`evidencias/02-consentimiento-informado.md`](evidencias/02-consentimiento-informado.md), [`evidencias/03-tareas.md`](evidencias/03-tareas.md) y `evidencias/04-hoja-de-observacion.md`.
+
 
 ## 6. Procedimiento
 
@@ -189,4 +196,16 @@ la interfaz a partir de los resultados de la evaluación.]
 
 ## 14. Referencias
 
-[Por completar.]
+- Bangor, A., Kortum, P., & Miller, J. (2009). Determining what individual SUS scores mean: Adding an adjective rating scale. *Journal of Usability Studies, 4*(3), 114–123.
+- Boehm, B. W. (1984). Verifying and validating software requirements and design specifications. *IEEE Software, 1*(1), 75–88.
+- Brooke, J. (1996). SUS: A "quick and dirty" usability scale. En *Usability Evaluation in Industry* (pp. 189–194). Taylor & Francis.
+- Faulkner, L. (2003). Beyond the five-user assumption: Benefits of increased sample sizes in usability testing. *Behavior Research Methods, Instruments, & Computers, 35*(3), 379–383.
+- Hertzum, M., & Jacobsen, N. E. (2001). The evaluator effect: A chilling fact about usability evaluation methods. *International Journal of Human-Computer Interaction, 13*(4), 421–443.
+- ISO 9241-11:2018. *Ergonomics of human-system interaction — Part 11: Usability: Definitions and concepts.*
+- Nielsen, J. (1993). *Usability Engineering.* Academic Press.
+- Nielsen, J. (1994). Enhancing the explanatory power of usability heuristics. *Proceedings of CHI '94*, 152–158.
+- Nielsen, J. (1995). *Severity ratings for usability problems.* Nielsen Norman Group.
+- Nielsen, J., & Landauer, T. K. (1993). A mathematical model of the finding of usability problems. *Proceedings of INTERCHI '93*, 206–213.
+- Rubin, J., & Chisnell, D. (2008). *Handbook of Usability Testing* (2.ª ed.). Wiley.
+- Sauro, J., & Lewis, J. R. (2016). *Quantifying the User Experience: Practical Statistics for User Research* (2.ª ed.). Morgan Kaufmann.
+- Tullis, T. S., & Stetson, J. N. (2004). A comparison of questionnaires for assessing website usability. *Usability Professionals Association Conference.*
