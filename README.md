@@ -43,7 +43,7 @@ Aplicar, triangular y cerrar la evaluación de usabilidad del prototipo **CaféU
 | **William Martínez** | `@william-martinez5101` | Soporte documental | **Paso 2:** Estructura inicial del repo, Marco teórico (`docs/investigacion.md`), Consentimiento, Guía heurística (`1–4`) y Heurística E2. |
 | **Manuel Cusme** | `[Por completar]` | Usuario (*Think-Aloud*) | **Paso 3:** Hoja de observación y SUS, Guía de laboratorio, Registros `P1–P3`, Heurística E3, Video de YouTube y Quiz (`.xlsx`). |
 | **Pablo Lozada** | `@dl7pablok` | Moderador | **Paso 4:** Heurística E4, Métricas y cálculo SUS, Matriz de hallazgos (`8.2`), Triangulación (`8.3`) y Diapositivas (`.pptx`). |
-| **Jonathan Gamboa** | `[Por completar]` | Observador y Soporte (F5) | **Paso 5:** Heurística E5, Criterios técnicos (`8.5`), Conclusiones (`docs/conclusiones.md`) y Preguntas QA/UX (`docs/preguntas.md`). |
+| **Jonathan Gamboa** | `@JonathanGamboa` | Observador y Soporte (F5) | **Paso 5:** Heurística E5, Criterios técnicos (`8.5`), Conclusiones (`docs/conclusiones.md`) y Preguntas QA/UX (`docs/preguntas.md`). |
 
 ## 4. Conceptos HCI utilizados
 
@@ -234,8 +234,20 @@ flowchart TD
 
 ### 8.5. Criterios técnicos
 
-[Por completar: justificar las recomendaciones para mejorar
-la interfaz a partir de los resultados de la evaluación.]
+Los criterios técnicos de mejora se derivan directamente de los hallazgos consolidados (Sección 8.2) y de la triangulación metodológica (Sección 8.3). Cada criterio especifica qué componente modificar, con qué patrón de implementación y bajo qué estándar de referencia, garantizando que las mejoras sean accionables por cualquier desarrollador de forma trazable.
+
+| ID | Hallazgo de origen | Componente afectado | Criterio técnico de mejora | Estándar / Referencia |
+|---|---|---|---|---|
+| **C-01** | H-01 — Buscador insensible a tildes | Función de filtrado del catálogo | Normalizar la cadena de búsqueda y los nombres de productos con `str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase()` antes de comparar, tanto en la entrada del usuario como en el índice del catálogo. | — (Buena práctica Unicode) |
+| **C-02** | H-02 — Borrado destructivo con `"Quitar"` | Carrito / `"Mi pedido"` | Reemplazar la eliminación inmediata por un snackbar temporal (5 s) con acción `"Deshacer"`, o por un diálogo modal de confirmación emergente antes de ejecutar el borrado. | Material Design — Snackbar pattern; H3 y H5 Nielsen |
+| **C-03** | H-03 — Toast de feedback cortado | Componente de notificación (toast) | Centrar el contenedor del toast en el ancho de la pantalla (`mx-auto`, `inset-x-4`), ampliar la duración de visibilidad a 3.5 s y animar el badge del icono de carrito para reforzar la confirmación visual. | WCAG 2.1 — SC 2.2.1 Timing Adjustable |
+| **C-04** | H-04 — Selector `− / +` con bajo contraste | Control de cantidad en detalle del producto | Rediseñar el control como bloque interactivo con área táctil mínima de **44 × 44 px** (WCAG 2.1 SC 2.5.5) y ratio de contraste entre el icono y el fondo de al menos **4.5:1** (WCAG 2.1 SC 1.4.3). | WCAG 2.1 SC 1.4.3 y SC 2.5.5 |
+| **C-05** | H-05 — Inconsistencia en botones y etiquetas | Navegación global y botones primarios | Estandarizar todas las etiquetas de retorno al menú con un icono de flecha + texto único `"Menú"`. Unificar el color de todos los botones de acción principal al terracota `#d94716`, eliminando la variación café/naranja. | ISO 9241-11:2018 — Consistencia |
+| **C-06** | H-06 — Ausencia de información operativa | Pantalla de confirmación (`#CU-104`) | Agregar un módulo informativo en la pantalla de confirmación que incluya: tiempo estimado de preparación (~8 min), modalidades de pago aceptadas (efectivo / transferencia) y ubicación física del punto de retiro. | ISO 9241-11:2018 — Eficacia; H10 Nielsen |
+| **C-07** | H-07 — Horario en formato 24 h | Pantalla de inicio (sección horario) | Cambiar la etiqueta de horario a `"Lunes a viernes de 7:00 a. m. a 7:00 p. m."` para alinearse con el uso cotidiano en el entorno universitario ecuatoriano. | H2 Nielsen — Coincidencia con el mundo real |
+| **C-08** | H-08 — Tipografía secundaria < 12 px | Etiquetas de categorías y contadores | Incrementar el tamaño de fuente base de las etiquetas secundarias (categorías, contadores, horario) de 10–11 px a **12–13 px** para garantizar legibilidad en condiciones de alta luminosidad ambiental. | WCAG 2.1 SC 1.4.4 — Resize Text |
+
+> **Priorización:** Los criterios C-01 a C-04 corresponden a los hallazgos de severidad 3 (Mayor) confirmados por ambos métodos y deben resolverse con **prioridad alta (P1/P2)** antes de cualquier despliegue real. Los criterios C-05 y C-06 son de prioridad media (P3), y C-07/C-08 son mejoras cosméticas de baja urgencia.
 
 ## 9. Evidencias y entregables
 
@@ -274,20 +286,24 @@ la interfaz a partir de los resultados de la evaluación.]
 
 ## 12. Preguntas técnicas y objeciones
 
-- Pregunta técnica 1: [Por completar].
-- Respuesta y evidencia: [Por completar].
+El banco completo de preguntas, respuestas con evidencia y objeciones anticipadas se encuentra en [`docs/preguntas.md`](docs/preguntas.md). A continuación se presenta la síntesis para la exposición:
 
-- Pregunta técnica 2: [Por completar].
-- Respuesta y evidencia: [Por completar].
+- **Pregunta técnica 1:** ¿Por qué se eligió la evaluación heurística con 5 evaluadores en lugar de hacer más pruebas con usuarios?
+- **Respuesta y evidencia:** Según Nielsen y Landauer (1993), 5 evaluadores expertos detectan ≈ 75 % de los problemas de usabilidad. La combinación con pruebas empíricas (Think-Aloud, P1–P3) permitió validar mediante triangulación los hallazgos "potenciales" del pilotaje. Los evaluadores cubrieron pantallas y funciones que las tareas de usuario no recorrieron (H-07, H-08), mientras que los usuarios confirmaron con datos de campo los cuatro hallazgos de severidad 3.
 
-- Objeción planteada: [Por completar].
-- Respuesta y justificación técnica: [Por completar].
+- **Pregunta técnica 2:** ¿Cómo se calculó el puntaje SUS y qué significa 70.83 en términos reales?
+- **Respuesta y evidencia:** Fórmula SUS: `[(Suma ítems impares − 5) + (25 − Suma ítems pares)] × 2.5`. El puntaje de **70.83** supera el umbral global de 68.0 (Sauro & Lewis, 2016) y se clasifica como *Bueno* (Bangor et al., 2009). Sin embargo, P2 —quien enfrentó el bloqueo del buscador en T7— otorgó 60.0 (*Regular*), demostrando que un fallo localizado degrada la percepción global del sistema.
+
+- **Objeción planteada:** *"Con solo 3 participantes, los resultados no son estadísticamente representativos."*
+- **Respuesta y justificación técnica:** La evaluación es **formativa**, no estadística. Faulkner (2003) establece que 3–5 participantes son suficientes para identificar los problemas más frecuentes en fases de prototipado. La convergencia entre 5 evaluadores heurísticos y 3 participantes empíricos mediante triangulación metodológica otorga solidez suficiente para fundamentar el backlog de mejoras de la Fase 4.
 
 ## 13. Conclusiones
 
-1. [Por completar.]
-2. [Por completar.]
-3. [Por completar.]
+1. **El prototipo CaféU funciona técnicamente, pero no supera plenamente la validación de usabilidad.** Las tareas estándar `T1–T6` se completaron con 100 % de éxito (mediana 38.5 s), confirmando la verificación técnica. No obstante, la tarea de refuerzo `T7` —que ejercitó el buscador y el control de borrado— produjo 0 % de éxito autónomo y 2 errores críticos, reduciendo la tasa global al 85.7 % y confirmando que el cumplimiento funcional no garantiza una buena experiencia de uso.
+
+2. **La triangulación metodológica fue el aporte diferencial del Grupo 6.** La convergencia entre la inspección heurística experta (E1–E5) y la evidencia empírica (P1–P3) en 5 de los 8 hallazgos (62.5 %) elevó dos problemas del pilotaje —buscador insensible a tildes (H-01) y borrado sin confirmación (H-02)— de "potenciales" a **severidad mayor comprobada con datos de campo**, otorgando solidez empírica y teórica inequívoca al backlog de la Fase 4.
+
+3. **El SUS de 70.83 supera la línea de base de la industria, pero la dispersión expone fallos críticos de interacción.** El promedio global es *Bueno* (Bangor et al., 2009), sin embargo la puntuación de P2 (60.0 / *Regular*) —causada por el bloqueo del buscador— evidencia que un único fallo de interacción localizado puede degradar severamente la percepción global de calidad, con implicaciones directas para la retención de usuarios en un producto real.
 
 ## 14. Referencias
 
