@@ -34,14 +34,14 @@ Demostrar que la ejecución técnica de una acción no garantiza una experiencia
 ## Guion breve de exposición de Manuel
 - **Métodos:** «La evaluación heurística revisa la interfaz con diez principios de Nielsen. La prueba Think-Aloud observa lo que una persona hace y piensa mientras intenta cumplir tareas».
 - **Ética:** «La participación es voluntaria, con consentimiento verbal. No publicamos nombres ni grabaciones; usamos los códigos P1, P2 y P3».
-- **Video:** introducir el recurso en español sobre pensamiento en voz alta y vincularlo con las tareas de CaféU.
+- **Video:** presentar el recurso en español sobre evaluación heurística y relacionarlo con los hallazgos de CaféU.
 - **Quiz:** ejecutar diez preguntas de repaso en Wayground, usando `docs/quiz-wayground-APE6.xlsx`.
 
 ## Video de apoyo en español (externo)
-**Título:** Ejemplo de cómo pensar en voz alta para un test de usabilidad (Think aloud)  
-**Canal:** Usabilidad Mercado Libre  
-**Enlace:** https://www.youtube.com/watch?v=bk5sXwCbIlc  
-**Uso:** mostrar cómo verbalizar decisiones, expectativas y dificultades durante las tareas de CaféU. Este recurso es distinto del video sobre las diez heurísticas utilizado por el Grupo 5.
+**Título:** ¿Qué es y cómo se aplica un Test Heurístico?  
+**Canal:** IDA  
+**Enlace:** https://youtu.be/Df9c4E1Bf2s  
+**Uso:** explicar la inspección heurística y su relación con la detección y priorización de problemas de usabilidad en CaféU.
 
 ## Criterios para compartir resultados
 Antes de comunicar los resultados, cotejar las tablas P1–P3 con las hojas de registro originales, revisar el consentimiento y comprobar los cálculos SUS. Conservar las evidencias anonimizadas conforme al acuerdo del grupo.
