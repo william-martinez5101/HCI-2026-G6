@@ -4,16 +4,16 @@
 
 ## Video seleccionado, distinto del utilizado por el Grupo 5
 
-- **Título:** Ejemplo de cómo pensar en voz alta para un test de usabilidad (Think aloud).
-- **Autor/canal:** Usabilidad Mercado Libre.
-- **Enlace:** https://www.youtube.com/watch?v=bk5sXwCbIlc
-- **Publicado:** 13 de marzo de 2015.
-- **Justificación:** Muestra cómo verbalizar pensamientos durante una prueba de usabilidad. Apoya directamente el papel de Manuel como usuario Think-Aloud, mientras Pablo modera, Emilio registra métricas y Jonathan observa.
-- **Conexión con CaféU:** el usuario relata sus decisiones al ejecutar tareas T1–T7, especialmente la búsqueda `sanduche` y la eliminación con `Quitar`, sin que el moderador le indique dónde tocar.
+- **Título:** ¿Qué es y cómo se aplica un Test Heurístico?.
+- **Autor/canal:** IDA.
+- **Enlace:** https://youtu.be/Df9c4E1Bf2s
+- **Duración:** aproximadamente 10 minutos.
+- **Justificación:** Explica el método de evaluación heurística y su aplicación para identificar problemas de usabilidad en interfaces.
+- **Conexión con CaféU:** permite relacionar la evaluación heurística con los hallazgos E1–E5, como los problemas del buscador y del botón Quitar.
 
 ## Guion breve para presentar el video
 
-"Este ejemplo presenta la técnica de pensamiento en voz alta. En nuestro laboratorio, el usuario describe lo que observa, espera y hace mientras ejecuta tareas en CaféU. El moderador evita dirigirlo, y el equipo registra tiempos, errores y hallazgos para contrastarlos con la evaluación heurística".
+"Este video explica cómo se aplica una evaluación heurística. En CaféU utilizamos las diez heurísticas de Nielsen para identificar problemas, asignar niveles de severidad y proponer mejoras que se contrastan con las pruebas de usuarios".
 
 ## Quiz Wayground
 
